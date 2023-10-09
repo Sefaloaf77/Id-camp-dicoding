@@ -207,30 +207,6 @@ function removeBook(bookId) {
     });
   });
 }
-// function removeBook(bookId) {
-//   Swal.fire({
-//     title: "Anda yakin?",
-//     text: "Anda tidak dapat mengembalikan buku ini!",
-//     icon: "warning",
-//     showCancelButton: true,
-//     confirmButtonColor: "#3085d6",
-//     cancelButtonColor: "#d33",
-//     confirmButtonText: "Ya, hapus!",
-//     cancelButtonText: "Batal",
-//   }).then((result) => {
-//     if (result.isConfirmed) {
-//       // Hapus buku jika pengguna menekan "Ya"
-//       const bookTarget = findBookIndex(bookId);
-//       if (bookTarget === -1) return;
-//       books.splice(bookTarget, 1);
-//       document.dispatchEvent(new Event(RENDER_EVENT));
-//       saveData();
-
-//       // Tampilkan SweetAlert2 pesan bahwa buku telah dihapus
-//       Swal.fire("Dihapus!", "Buku telah dihapus.", "success");
-//     }
-//   });
-// }
 
 function undoBookFromCompleted(bookId) {
   const bookTarget = findBook(bookId);
