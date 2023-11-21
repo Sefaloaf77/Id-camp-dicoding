@@ -10,7 +10,6 @@ export default function NoteApp() {
   const onSearchChangeHandler = (e) => {
     setSearch(e.target.value);
   };
-  // console.log(search)
 
   return (
     <div>

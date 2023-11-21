@@ -5,9 +5,11 @@ export default function NoteInput({ handleAddNote }) {
   const [body, setBody] = useState("");
 
   const onTitleChangeHandler = (e) =>{
-    setTitle(e.target.value)
+    if (e.target.value.length <= 50) {
+      setTitle(e.target.value);
+    } 
   }
-
+  const remainingCharacter = 50-title.length;
   const onBodyChangeHandler = (e)=>{
     setBody(e.target.value)
   }
@@ -15,14 +17,16 @@ export default function NoteInput({ handleAddNote }) {
   const onSubmitHandler = (e)=>{
     e.preventDefault()
     handleAddNote({title, body})
-    // console.log({title})
   }
+  
 
   return (
     <>
       <form className="note-input" onSubmit={onSubmitHandler}>
         <h2>Buat Catatan</h2>
-        <p className="note-input__title__char-limit">Sisa Karakter: </p>
+        <p className="note-input__title__char-limit">
+          Sisa Karakter: {remainingCharacter}
+        </p>
         <input
           className="note-input__title"
           type="text"
